@@ -1,0 +1,38 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing Page</title>
+    
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="{% static '/listings/css/listing.css' %}">
+</head>
+<body>
+
+    <div class="listing-container">
+        <h1 class="h1" id="title-id"> {{ listing.title }} </h1>
+        <h4> ${{ listing.price }} </h4>
+        <p> {{ listing.address }} </p>
+        
+        
+        
+        <div class= "div-notify">
+        <a class = "notify" href= "/listings/{{listing.id}}/edit/"> Edit </a>
+        <a class = "notify" href= "/listings/{{listing.id}}/delete/"> Delete </a>
+        
+        <button class= "notify" id="notifyme" > Notify Me  </button>
+        </div>
+        
+    </div>
+    
+
+</body>
+</html>
+{% endblock content %}
